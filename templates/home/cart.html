@@ -1,0 +1,88 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+
+
+<br /><br>
+<div class="container">
+    <div class="row  shadow shadow-intensity-lg display">
+        <div class="col-sm-12 col-md-6 col-lg-6 ">
+            
+                <h3 class="display-6 text-success">
+                    Grant Total:
+                    <span class="badge text-bg-success"> Rs.1000/- </span>
+                  </h3>
+                  <h3>
+                    Total Items:
+                    <span class="badge text-bg-info">4</span>
+                  </h3>
+                  
+        </div>
+        
+        <div class="col-sm-12 col-md-6 col-lg-6" >
+            <div style="float:right;">
+                <a href="{% url 'home' %}" class="btn btn-outline-primary">
+                    Go Back
+                    <i class="bi bi-bag-check-fill"></i>                        
+                </a>
+                <a href="{% url 'checkout' %}" class="btn btn-warning">
+                   Checkout
+                    <i class="bi bi-wallet2"></i>       
+                 </a>
+            </div>
+        </div>
+    </div>
+         
+   </div>
+    
+    <!-- ........................................ -->
+    <hr>
+
+    <div class="container">
+  <div class="row">
+     <div class="col-sm-12 col-md-12 col-lg-12">        
+
+      <div class="container shadow shadow-intensity-lg display">
+        <h1 class="text-center text-danger">
+          Your Cart
+          <i class="bi bi-cart4"></i>
+        </h1>
+        <hr />
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Image</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Shop Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>
+                    <img class="img-fluid" src="{% static './images/def.png' %}" height="100" width="100">
+                </td>
+                <td>Otto</td>
+                <td>Otto</td>
+                <td>1</td>
+                <td>1000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+
+<br><br>
+
+
+{% endblock %}

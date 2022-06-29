@@ -1,0 +1,44 @@
+body{
+    /* background-color: teal; */
+}
+
+nav{
+    background-color: #DAEAF1;
+    /* background-color: blue; */
+}
+
+.display{
+    padding: 20px;
+
+}
+#banner{
+    background: url('../images/b2.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.53);
+    background-blend-mode: darken;
+}
+
+#homebanner{
+    background: url('../images/hom3.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.53);
+    background-blend-mode: darken;
+}
+
+
+
+#shopbanner{
+    background: url('../images/shops.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.53);
+    background-blend-mode: darken;
+}
+
+
+

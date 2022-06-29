@@ -1,0 +1,49 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block content %}
+{% include  './shopcarousel.html' %}
+<br>
+{% include  './searchbar.html' %}
+<br>
+<div class="container shadow shadow-intensity-lg" id="display">
+    <h1>Shops</h1>
+    <hr>
+    <div class="container">
+        <div class="row">
+            {% for shop in shops %}
+        <div class="col-sm-12 col-md-4 col-lg-3 " >                        
+            <div class="card  text-bg-light mb-3" style="max-width: 18rem;">
+                {% if shop.shop_logo %}
+                <img src="{{shop.shop_logo.url}}" class="card-img-top product_image"  alt="image" height="200px" width="200px">
+                {%else%}
+                <img src="{% static './images/def.png' %}" class="card-img-top product_image"  alt="image" height="200px" width="200px">
+                {% endif %}
+                <div class="card-header">
+                    <h5 class="card-title text-danger display-6">{{shop.shop_name}}</h5>
+                    <small >Owned By <span style="color:dodgerblue;text-transform: uppercase;">{{shop.owner}}</span></small>
+                </div>
+
+                <div class="card-body text-center">                                     
+                <a href="{% url 'shop_details' shop.shop_id %}" type="button" class="btn btn-outline-success">
+                    View More
+                </a>
+                      
+                </div>
+
+              </div>
+        </div>
+
+        {% endfor %}
+         <!-- ............................... -->
+         
+    </div>
+       
+    </div>           
+
+  </div>
+
+
+
+
+{% endblock content%}

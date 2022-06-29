@@ -1,0 +1,106 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+
+
+<br>
+<div class="container shadow shadow-intensity-lg" id="display">
+  <div class="container">
+      <div class="row">
+
+          <div class="col-sm-12 col-md-6 col-lg-6 " >                        
+            {% if details.shop_logo %}
+            <img src="{{details.shop_logo.url}}" class="card-img-top product_image"  alt="image" >
+            {%else%}
+            <img src="{% static './images/def.png' %}" class="card-img-top product_image"  alt="image" >
+            {% endif %}          </div>
+           <!-- ............................... -->
+
+           <div class="col-sm-12 col-md-6 col-lg-6 " >
+              <span>
+                  <h2 class="display-3 text-danger">{{details.shop_name}}</h2>
+              </span>
+              <hr>
+              <h3 class="display-6">                  
+                  
+                    Owned By <span style="text-transform: uppercase;color:blue">{{details.owner}}</span>
+               
+              </h3>
+              <h5>Description:</h5>
+              <p>{{details.description}}
+              </p>
+              <h5>Address:</h5>
+              <p>{{details.shop_address}}
+              </p>
+              <h5>Contact:</h5>
+              <p>{{details.contact}}
+              </p>
+              <h5>Email:</h5>
+              <p>{{details.email}}
+              </p>
+              <a href="#" class="btn btn-outline-secondary">
+                  Edit Profile
+                  <i class="bi bi-shop-window"></i>
+                  </a>
+              
+              
+          </div>
+           <!-- ............................... -->
+           
+      </div>
+  </div>           
+  <br><hr>
+</div>
+
+{% comment %} ############################################# {% endcomment %}
+
+
+<br>
+{% include  './searchbar.html' %}
+<br>
+<div class="container shadow shadow-intensity-lg" id="display">
+    <h1>Products</h1>
+    <hr>
+    <div class="container">
+        <div class="row">
+                {% for product in products %}
+            <div class="col-sm-12 col-md-4 col-lg-3 " >                        
+                <div class="card  text-bg-light mb-3" style="max-width: 18rem;">
+                    {% if product.image %}
+                    <img src="{{product.image.url}}" class="card-img-top product_image"  alt="image" height="200px" width="200px">
+                    {%else%}
+                    <img src="{% static './images/def.png' %}" class="card-img-top product_image"  alt="image" height="200px" width="200px">
+                    {% endif %}
+                    <div class="card-header">
+                        <h5 class="card-title">{{product.pname}} <span class="badge bg-danger">New</span></h5>
+                        <h5 style="color:dodgerblue;">Rs.{{product.price}}/-</h5>
+                    </div>
+
+                    <div class="card-body">                                     
+                    <a href="{% url 'product_details' %}" type="button" class="btn btn-outline-success">
+                        View
+                    </a>
+                    <button type="button" class="btn btn-outline-primary" style="float:right;">
+                        Add To Cart
+                    </button>        
+                    </div>
+
+                  </div>
+            </div>
+
+            {% endfor %}
+             <!-- ............................... -->
+             
+        </div>
+       
+    </div>           
+
+  </div>
+
+
+
+
+
+
+
+{% endblock %}
